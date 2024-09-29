@@ -1,8 +1,9 @@
-// src/components/Quiz.js
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { FaCheck, FaTimes } from 'react-icons/fa';
-import { Title, AppContainer, QuestionContainer, QuestionImage, QuestionText, AnswerButton, ResultContainer, ScoreText, Button } from '../styles/AppStyles';
+import { AppContainer } from '../styles/AppStyles';
+import { Title, ScoreText } from '../styles/TextStyles';
+import { ResultContainer } from '../styles/ContainerStyles';
+import { Button } from '../styles/ButtonStyles';
 import Question from './Question';
 
 const Quiz = ({ questions, setScreen }) => {
@@ -17,17 +18,13 @@ const Quiz = ({ questions, setScreen }) => {
     const correct = answer === questions[currentQuestionIndex].correctAnswer;
     setIsCorrect(correct);
     if (correct) {
-      setScore(score + 1);
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
+      setScore(prevScore => prevScore + 1);
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
     }
 
     setTimeout(() => {
       if (currentQuestionIndex < questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setCurrentQuestionIndex(prevIndex => prevIndex + 1);
       } else {
         setShowResult(true);
       }
@@ -42,11 +39,7 @@ const Quiz = ({ questions, setScreen }) => {
         <Title>¡Quiz Completado!</Title>
         <ResultContainer>
           <ScoreText>Tu puntuación: {score} / 10</ScoreText>
-          <Button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setScreen('home')}
-          >
+          <Button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => setScreen('home')}>
             Reiniciar Quiz
           </Button>
         </ResultContainer>
@@ -54,13 +47,11 @@ const Quiz = ({ questions, setScreen }) => {
     );
   }
 
-  const currentQuestion = questions[currentQuestionIndex];
-
   return (
     <AppContainer>
       <Title>Quiz de Enfermería</Title>
       <Question 
-        currentQuestion={currentQuestion} 
+        currentQuestion={questions[currentQuestionIndex]} 
         handleAnswer={handleAnswer} 
         selectedAnswer={selectedAnswer} 
         isCorrect={isCorrect} 
