@@ -14,7 +14,8 @@ const cases = [
       Al examen físico destaca edema ++ en EID, dolor eva 3, el apósito primario tiene 100% de exudado, 
       seroso, sin mal olor.
     `,
-    table: tables.find((table) => table.id === 1),
+    table: tables.find((table) => table.name  === 'Ulcera venosa'),
+    correctEvaluation: 'Tipo 4',
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ const cases = [
       Al examen físico destaca edema + en EII, dolor eva 1, el apósito primario tiene 100% de exudado, 
       turbio, con mal olor. Al valorar profundidad, se percibe que en la zona plantar se toca el hueso.
     `,
-    table: tables.find((table) => table.id === 1),
+    table: tables.find((table) => table.name  === 'Ulcera de pié diabético'),
+    correctEvaluation: 'Grado 3',
   },
   {
     id: 3,
@@ -37,7 +39,8 @@ const cases = [
       Al examen físico destaca edema + en zona sacra, dolor eva 5, el apósito primario tiene 100% de exudado, 
       turbio, con mal olor.
     `,
-    table: tables.find((table) => table.id === 1),
+    table: tables.find((table) => table.name === 'Heridas y Úlceras'),
+    correctEvaluation: 'Tipo 3',
   },
 ];
 

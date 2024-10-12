@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Question.css';
 import Table from './Table';
 
-const Question = ({ currentQuestion }) => {
+const Question = ({ currentQuestion, onSubmit, resetSelection }) => {
   return (
     <div className="question-container">
       <img src={currentQuestion.image} alt="Caso clínico" />
@@ -11,6 +11,8 @@ const Question = ({ currentQuestion }) => {
       <Table
         aspects={currentQuestion.table.aspects}
         evaluation={currentQuestion.table.evaluation}
+        onSubmit={onSubmit}
+        resetSelection={resetSelection}
       />
     </div>
   );
