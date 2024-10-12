@@ -16,14 +16,10 @@
 }
 
 .question-button {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     font-size: 16px;
-    margin-bottom: 10px;
-    background-color: #ed9441;
-    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
