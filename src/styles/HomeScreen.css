@@ -1,0 +1,26 @@
+.home-screen {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.home-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.home-title {
+  font-size: 24px;
+  color: white;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.home-button:hover {
+  opacity: 0.8;
+}

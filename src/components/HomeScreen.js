@@ -1,37 +1,28 @@
 import React from 'react';
-import { AppContainer } from '../styles/AppStyles';
-import { Title } from '../styles/TextStyles';
-import { Button } from '../styles/ButtonStyles';
-import styled from 'styled-components';
+import '../styles/HomeScreen.css';
+import { useAuth } from '../contexts/AuthContext';
+import { useScreen } from '../contexts/ScreenContext';
 import logo from '../assets/escudo-ucn-white.png';
 
-const Logo = styled.img`
-  width: 150px;
-  margin: 0 auto 20px;
-  display: block;
-`;
+const HomeScreen = () => {
+  const { setIsAuthenticated } = useAuth();
+  const { setScreen } = useScreen();
 
-const HomeScreen = ({ setScreen }) => {
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    setScreen('login'); // Cambiar la pantalla a 'login'
-    window.location.reload(); // Recargar la página para asegurarse de que se actualice correctamente
+    setIsAuthenticated(false);
+    setScreen('login');
+    window.location.reload();
   };
 
   return (
-    <AppContainer>
-      <Logo src={logo} alt="Logo Universidad Católica del Norte" />
-      <Title>Bienvenido al Quiz de Enfermería</Title>
-      <Button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setScreen('quiz')}>
-        Comenzar Quiz
-      </Button>
-      <Button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setScreen('study')}>
-        Material de Estudio
-      </Button>
-      <Button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleLogout}>
-        Cerrar Sesión
-      </Button>
-    </AppContainer>
+    <div className="home-screen">
+      <img className="home-logo" src={logo} alt="Logo Universidad Católica del Norte" />
+      <h1 className="home-title">Bienvenido al Quiz de Enfermería</h1>
+      <button className="home-button" onClick={() => setScreen('quiz')}>Comenzar Quiz</button>
+      <button className="home-button" onClick={() => setScreen('study')}>Material de Estudio</button>
+      <button className="logout-button" onClick={handleLogout}>Cerrar Sesión</button>
+    </div>
   );
 };
 

@@ -1,22 +1,20 @@
 import React from 'react';
-import { AppContainer } from '../styles/AppStyles';
-import { Title } from '../styles/TextStyles';
-import { MaterialContainer } from '../styles/ContainerStyles';
-import { MaterialImage } from '../styles/ImageStyles';
-import { MaterialText } from '../styles/TextStyles';
-import { Button } from '../styles/ButtonStyles';
+import '../styles/StudyMaterial.css';
+import { useScreen } from '../contexts/ScreenContext';
 
-const StudyMaterial = ({ setScreen }) => (
-  <AppContainer>
-    <Title>Material de Estudio</Title>
-    <MaterialContainer>
-      <MaterialImage src="https://example.com/material1.jpg" alt="Material de estudio 1" />
-      <MaterialText>Descripción del material de estudio 1...</MaterialText>
-    </MaterialContainer>
-    <Button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setScreen('home')}>
-      Volver al Inicio
-    </Button>
-  </AppContainer>
-);
+const StudyMaterial = () => {
+  const { setScreen } = useScreen();
+
+  return (
+    <div className="study-container">
+      <h1>Material de Estudio</h1>
+      <div>
+        <img src="https://example.com/material1.jpg" alt="Material de estudio 1" />
+        <p>Descripción del material de estudio 1...</p>
+      </div>
+      <button className="study-button" onClick={() => setScreen('home')}>Volver al Inicio</button>
+    </div>
+  );
+};
 
 export default StudyMaterial;
