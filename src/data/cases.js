@@ -16,7 +16,7 @@ const cases = [
     `,
     table: tables.find((table) => table.name === 'Ulcera venosa'),
     correctEvaluation: 'Tipo 4',
-    correctAnswers: {
+    correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 3,                 // > 5-10 cm
       'Profundidad': 2,                     // 0.1-0.9 cm
@@ -41,7 +41,7 @@ const cases = [
     `,
     table: tables.find((table) => table.name === 'Ulcera de pié diabético'),
     correctEvaluation: 'Grado 3',
-    correctAnswers: {
+    correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 5,                 // > 10 cm
       'Profundidad': 5,                     // > 3 cm
@@ -65,7 +65,7 @@ const cases = [
     `,
     table: tables.find((table) => table.name === 'Heridas y Úlceras'),
     correctEvaluation: 'Tipo 3',
-    correctAnswers: {
+    correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 3,                 // > 3-6 cm
       'Profundidad': 2,                     // < 1 cm

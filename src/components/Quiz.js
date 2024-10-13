@@ -50,7 +50,7 @@ const Quiz = ({ questions }) => {
         {submitted ? (
           <Table
             aspects={currentQuestion.table.aspects}
-            correctAnswers={currentQuestion.correctAnswers}
+            correctAspects={currentQuestion.correctAspects}
             readOnly={true}
           />
         ) : (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Table.css';
 
-const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAnswers, readOnly = false }) => {
+const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAspects, readOnly = false }) => {
   const [selectedOptions, setSelectedOptions] = useState(Array(aspects.length).fill(null));
   const [totalScore, setTotalScore] = useState(0);
   const [currentEvaluationType, setCurrentEvaluationType] = useState(null);
@@ -56,7 +56,7 @@ const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAnswers, 
             <tr key={index}>
               <td>{aspect.name}</td>
               {aspect.options.map((option, optIndex) => {
-                const isCorrect = correctAnswers && correctAnswers[aspect.name] === option.score;
+                const isCorrect = correctAspects && correctAspects[aspect.name] === option.score;
                 const isSelected = selectedOptions[index] === option.score;
                 const isIncorrect = isSelected && !isCorrect;
 
