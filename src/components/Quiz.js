@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Quiz.css';
-import Question from './Question';
+import Table from './Table';
 import { useScreen } from '../contexts/ScreenContext';
 
 const Quiz = ({ questions }) => {
@@ -8,8 +8,10 @@ const Quiz = ({ questions }) => {
   const [showResult, setShowResult] = useState(false);
   const { setScreen } = useScreen();
   const [resetSelection, setResetSelection] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleNextQuestion = () => {
+    setSubmitted(false);
     if (currentQuestionIndex < questions.length - 1) {
       setResetSelection(true);
       setTimeout(() => {
@@ -21,11 +23,11 @@ const Quiz = ({ questions }) => {
     }
   };
 
-  useEffect(() => {
-    if (resetSelection) {
-      setResetSelection(false);
-    }
-  }, [currentQuestionIndex, resetSelection]);
+  const handleSubmit = () => {
+    setSubmitted(true);
+  };
+
+  const currentQuestion = questions[currentQuestionIndex];
 
   if (showResult) {
     return (
@@ -41,11 +43,31 @@ const Quiz = ({ questions }) => {
   return (
     <div className="quiz-container">
       <h1>Quiz de Enfermería</h1>
-      <Question
-        currentQuestion={questions[currentQuestionIndex]}
-        onSubmit={handleNextQuestion}
-        resetSelection={resetSelection}
-      />
+      <div className="question-container">
+        <img src={currentQuestion.image} alt="Caso clínico" />
+        <p>{currentQuestion.description}</p>
+
+        {submitted ? (
+          <Table
+            aspects={currentQuestion.table.aspects}
+            correctAnswers={currentQuestion.correctAnswers}
+            readOnly={true}
+          />
+        ) : (
+          <Table
+            aspects={currentQuestion.table.aspects}
+            evaluation={currentQuestion.table.evaluation}
+            onSubmit={handleSubmit}
+            resetSelection={resetSelection}
+          />
+        )}
+
+        {submitted && (
+          <button className="quiz-button" onClick={handleNextQuestion}>
+            Siguiente
+          </button>
+        )}
+      </div>
     </div>
   );
 };

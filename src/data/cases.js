@@ -14,8 +14,20 @@ const cases = [
       Al examen físico destaca edema ++ en EID, dolor eva 3, el apósito primario tiene 100% de exudado, 
       seroso, sin mal olor.
     `,
-    table: tables.find((table) => table.name  === 'Ulcera venosa'),
+    table: tables.find((table) => table.name === 'Ulcera venosa'),
     correctEvaluation: 'Tipo 4',
+    correctAnswers: {
+      'Aspecto': 3,                         // Amarillo pálido
+      'Mayor extensión': 3,                 // > 5-10 cm
+      'Profundidad': 2,                     // 0.1-0.9 cm
+      'Exudado cantidad': 3,                // Moderado
+      'Exudado calidad': 2,                 // Seroso
+      'Tejido esfacelado o necrótico': 3,   // 25%-75%
+      'Tejido granulatorio': 3,             // < 75%-25%
+      'Edema': 3,                           // ++
+      'Dolor': 2,                           // 2-3
+      'Piel circundante': 4,                // Macerada
+    },
   },
   {
     id: 2,
@@ -27,8 +39,20 @@ const cases = [
       Al examen físico destaca edema + en EII, dolor eva 1, el apósito primario tiene 100% de exudado, 
       turbio, con mal olor. Al valorar profundidad, se percibe que en la zona plantar se toca el hueso.
     `,
-    table: tables.find((table) => table.name  === 'Ulcera de pié diabético'),
+    table: tables.find((table) => table.name === 'Ulcera de pié diabético'),
     correctEvaluation: 'Grado 3',
+    correctAnswers: {
+      'Aspecto': 3,                         // Amarillo pálido
+      'Mayor extensión': 5,                 // > 10 cm
+      'Profundidad': 5,                     // > 3 cm
+      'Exudado cantidad': 3,                // Moderado
+      'Exudado calidad': 3,                 // Turbio hemático
+      'Tejido esfacelado o necrótico': 4,   // > 50%-75%
+      'Tejido granulatorio': 3,             // < 75%-50%
+      'Edema': 2,                           // +
+      'Dolor': 1,                           // 0-1
+      'Piel circundante': 4,                // Macerada
+    },
   },
   {
     id: 3,
@@ -41,6 +65,18 @@ const cases = [
     `,
     table: tables.find((table) => table.name === 'Heridas y Úlceras'),
     correctEvaluation: 'Tipo 3',
+    correctAnswers: {
+      'Aspecto': 3,                         // Amarillo pálido
+      'Mayor extensión': 3,                 // > 3-6 cm
+      'Profundidad': 2,                     // < 1 cm
+      'Exudado cantidad': 3,                // Moderado
+      'Exudado calidad': 3,                 // Turbio o Hemático
+      'Tejido esfacelado o necrótico': 3,   // > 25%-50%
+      'Tejido granulatorio': 3,             // < 75%-50%
+      'Edema': 2,                           // +
+      'Dolor': 1,                           // 0-1
+      'Piel circundante': 3,                // Macerada
+    },
   },
 ];
 
