@@ -12,11 +12,11 @@ const LoginScreen = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
-      if (user.email.endsWith('@ucn.cl')) {
+      if (user.email.match(/^[^@]+@[^@]+\.ucn\.cl$/)) {
         localStorage.setItem('isAuthenticated', true);
         setIsAuthenticated(true);
       } else {
-        alert('Solo se permiten correos de dominio @ucn.cl');
+        alert('Solo se permiten correos del dominio ucn.cl');
         auth.signOut();
       }
     } catch (error) {
