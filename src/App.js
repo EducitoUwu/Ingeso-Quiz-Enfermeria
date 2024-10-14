@@ -4,9 +4,9 @@ import HomeScreen from './components/HomeScreen';
 import StudyMaterial from './components/StudyMaterial';
 import Quiz from './components/Quiz';
 import LoginScreen from './components/LoginScreen';
-import cases from './data/cases';
 import { useAuth } from './contexts/AuthContext';
 import { useScreen } from './contexts/ScreenContext';
+import cases from './data/cases';
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -15,12 +15,9 @@ function App() {
 
   useEffect(() => {
     const authenticated = localStorage.getItem('isAuthenticated');
-    if (authenticated) {
-      setIsAuthenticated(true);
-    }
+    setIsAuthenticated(Boolean(authenticated));
 
-    // Seleccionamos casos de manera aleatoria (ejemplo con 3 casos)
-    const shuffledCases = cases.sort(() => 0.5 - Math.random()).slice(0, 3);
+    const shuffledCases = cases.sort(() => Math.random() - 0.5).slice(0, 3);
     setSelectedCases(shuffledCases);
   }, [setIsAuthenticated]);
 
@@ -32,7 +29,7 @@ function App() {
     <>
       {screen === 'home' && <HomeScreen />}
       {screen === 'study' && <StudyMaterial />}
-      {screen === 'quiz' && <Quiz questions={selectedCases} />} {/* Pasamos los casos como preguntas */}
+      {screen === 'quiz' && <Quiz questions={selectedCases} />}
     </>
   );
 }

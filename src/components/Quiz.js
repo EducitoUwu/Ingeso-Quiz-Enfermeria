@@ -1,33 +1,44 @@
 import React, { useState } from 'react';
 import '../styles/Quiz.css';
-import Table from './Table';
 import { useScreen } from '../contexts/ScreenContext';
+import Table from './Table';
+import Question from './Question';
 
 const Quiz = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const { setScreen } = useScreen();
   const [resetSelection, setResetSelection] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showQuestions, setShowQuestions] = useState(false);
+  const { setScreen } = useScreen();
 
-  const handleNextQuestion = () => {
-    setSubmitted(false);
-    if (currentQuestionIndex < questions.length - 1) {
+  const handleNextCase = () => {
+    if (currentCaseIndex < questions.length - 1) {
       setResetSelection(true);
       setTimeout(() => {
         setResetSelection(false);
-        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        setCurrentCaseIndex((prevIndex) => prevIndex + 1);
+        setSubmitted(false);
+        setShowQuestions(false);
       }, 300);
     } else {
       setShowResult(true);
     }
   };
 
-  const handleSubmit = () => {
-    setSubmitted(true);
+  const handleSubmitTable = () => {
+    setSubmitted(true); // Marca la tabla como enviada
   };
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const handleShowQuestions = () => {
+    setShowQuestions(true); // Muestra las preguntas después de la tabla
+  };
+
+  const currentCase = questions[currentCaseIndex];
+
+  if (!currentCase || !currentCase.table) {
+    return <div>Cargando caso...</div>;
+  }
 
   if (showResult) {
     return (
@@ -44,27 +55,25 @@ const Quiz = ({ questions }) => {
     <div className="quiz-container">
       <h1>Quiz de Enfermería</h1>
       <div className="question-container">
-        <img src={currentQuestion.image} alt="Caso clínico" />
-        <p>{currentQuestion.description}</p>
+        <img src={currentCase.image} alt="Caso clínico" />
+        <p>{currentCase.description}</p>
 
-        {submitted ? (
+        {!showQuestions ? (
           <Table
-            aspects={currentQuestion.table.aspects}
-            correctAspects={currentQuestion.correctAspects}
-            readOnly={true}
+            aspects={currentCase.table.aspects || []}
+            correctAspects={currentCase.correctAspects || {}}
+            onSubmit={handleSubmitTable}
+            resetSelection={resetSelection}
+            readOnly={submitted}
+            submitted={submitted}
           />
         ) : (
-          <Table
-            aspects={currentQuestion.table.aspects}
-            evaluation={currentQuestion.table.evaluation}
-            onSubmit={handleSubmit}
-            resetSelection={resetSelection}
-          />
+          <Question questions={currentCase.questions} onNextCase={handleNextCase} />
         )}
 
-        {submitted && (
-          <button className="quiz-button" onClick={handleNextQuestion}>
-            Siguiente
+        {submitted && !showQuestions && (
+          <button className="quiz-button" onClick={handleShowQuestions}>
+            Ver Preguntas
           </button>
         )}
       </div>

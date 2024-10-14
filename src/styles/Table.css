@@ -4,7 +4,8 @@
     margin-top: 20px;
 }
 
-.score-table th, .score-table td {
+.score-table th,
+.score-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
@@ -26,28 +27,6 @@
 
 .option-cell:hover {
     background-color: #f0f0f0;
-}
-
-.option-cell.selected {
-    border: 2px solid #3498db;
-    background-color: #eaf4fc;
-}
-
-.option-cell.correct {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-}
-
-.option-cell.incorrect {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-}
-
-.option-cell.selected {
-    border: 2px solid #3498db;
-    background-color: #eaf4fc;
 }
 
 .total-score {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Table.css';
 
-const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAspects, readOnly = false }) => {
+const Table = ({ aspects = [], evaluation = [], onSubmit, resetSelection, correctAspects, readOnly = false, submitted }) => {
   const [selectedOptions, setSelectedOptions] = useState(Array(aspects.length).fill(null));
   const [totalScore, setTotalScore] = useState(0);
   const [currentEvaluationType, setCurrentEvaluationType] = useState(null);
@@ -38,7 +38,9 @@ const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAspects, 
     }
   };
 
-  const getMaxOptions = () => Math.max(...aspects.map((aspect) => aspect.options.length));
+  const getMaxOptions = () => aspects.length > 0 
+    ? Math.max(...aspects.map((aspect) => aspect.options.length)) 
+    : 0;
 
   return (
     <>
@@ -64,8 +66,8 @@ const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAspects, 
                   <td
                     key={optIndex}
                     className={`option-cell 
-                      ${isCorrect ? 'correct' : ''} 
-                      ${isIncorrect ? 'incorrect' : ''}
+                      ${submitted && isCorrect ? 'correct' : ''} 
+                      ${submitted && isIncorrect ? 'incorrect' : ''}
                       ${isSelected && !readOnly ? 'selected' : ''}`}
                     onClick={() => handleOptionSelect(index, option.score)}
                   >
@@ -89,9 +91,7 @@ const Table = ({ aspects, evaluation, onSubmit, resetSelection, correctAspects, 
             {evaluation.map((e, index) => (
               <div
                 key={index}
-                className={`evaluation-item ${
-                  currentEvaluationType === e.type ? 'active' : ''
-                }`}
+                className={`evaluation-item ${currentEvaluationType === e.type ? 'active' : ''}`}
               >
                 <strong>{e.type}</strong>: {e.description} (Puntos: {e.range[0]} - {e.range[1]})
               </div>

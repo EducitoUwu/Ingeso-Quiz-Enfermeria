@@ -34,3 +34,20 @@
     text-align: center;
     color: #3498db;
 }
+
+.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.selected {
+    border: 2px solid #3498db;
+    background-color: #eaf4fc;
+}
