@@ -53,15 +53,23 @@ const Quiz = ({ questions }) => {
 
   return (
     <div className="quiz-container">
+      {/* Botón de Volver a Inicio en la parte superior */}
+      <div className="back-button-container">
+        <button className="back-button" onClick={() => setScreen('home')}>
+          Volver a inicio
+        </button>
+      </div>
+  
       <h1>Quiz de Enfermería</h1>
       <div className="question-container">
         <img src={currentCase.image} alt="Caso clínico" />
         <p>{currentCase.description}</p>
-
+  
         {!showQuestions ? (
           <Table
             aspects={currentCase.table.aspects || []}
             correctAspects={currentCase.correctAspects || {}}
+            evaluation={currentCase.table.evaluation || []}
             onSubmit={handleSubmitTable}
             resetSelection={resetSelection}
             readOnly={submitted}
@@ -70,7 +78,7 @@ const Quiz = ({ questions }) => {
         ) : (
           <Question questions={currentCase.questions} onNextCase={handleNextCase} />
         )}
-
+  
         {submitted && !showQuestions && (
           <button className="quiz-button" onClick={handleShowQuestions}>
             Ver Preguntas
@@ -78,7 +86,7 @@ const Quiz = ({ questions }) => {
         )}
       </div>
     </div>
-  );
+  );  
 };
 
 export default Quiz;

@@ -1,7 +1,8 @@
 .score-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
+    overflow-x: auto;
 }
 
 .score-table th,
@@ -9,6 +10,7 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .score-table th {
@@ -53,4 +55,11 @@
     background-color: #eaf4fc;
     border: 2px solid #3498db;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .score-table th, 
+    .score-table td {
+        padding: 4px;
+    }
 }
