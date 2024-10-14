@@ -1,21 +1,25 @@
+import descriptions from './descriptions';
 import tables from './tables';
+import questions from './questions';
 import caso1 from '../assets/Caso-1.png';
 import caso2 from '../assets/Caso-2.png';
 import caso3 from '../assets/Caso-3.png';
+
+const getQuestionsForCase = (caseId) => {
+  const questionIdsByCase = {
+    1: [1, 2, 3, 4, 5], //Caso 1
+    2: [6, 7, 8, 9, 10], //Caso 2
+    3: [11, 12, 13, 14, 15], //Caso 3
+  };
+  return questions.filter((q) => questionIdsByCase[caseId].includes(q.id));
+};
 
 const cases = [
   {
     id: 1,
     image: caso1,
-    description: `
-      Usuaria de 56 años con antecedente de TVP hace 4 años, cursa con lesión en tercio inferior 
-      de pierna derecha, específicamente en maleolo interno. Presenta pulsos en ambas EEII, no se observan 
-      signos de insuficiencia arterial periférica.
-      Al examen físico destaca edema ++ en EID, dolor eva 3, el apósito primario tiene 100% de exudado, 
-      seroso, sin mal olor.
-    `,
+    description: descriptions.case1,
     table: tables.find((table) => table.name === 'Ulcera venosa'),
-    correctEvaluation: 'Tipo 4',
     correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 3,                 // > 5-10 cm
@@ -28,19 +32,14 @@ const cases = [
       'Dolor': 2,                           // 2-3
       'Piel circundante': 4,                // Macerada
     },
+    correctEvaluation: 'Tipo 4',
+    questions: getQuestionsForCase(1),
   },
   {
     id: 2,
     image: caso2,
-    description: `
-      Usuario de 66 años con antecedente de DMII IR hace 14 años, cursa con lesión plantar en pie izquierdo 
-      producto de usar guatero para dormir. Presenta pulsos en ambas EEII, no se observan signos de insuficiencia 
-      arterial periférica. Sensibilidad disminuida.
-      Al examen físico destaca edema + en EII, dolor eva 1, el apósito primario tiene 100% de exudado, 
-      turbio, con mal olor. Al valorar profundidad, se percibe que en la zona plantar se toca el hueso.
-    `,
+    description: descriptions.case2,
     table: tables.find((table) => table.name === 'Ulcera de pié diabético'),
-    correctEvaluation: 'Grado 3',
     correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 5,                 // > 10 cm
@@ -53,18 +52,14 @@ const cases = [
       'Dolor': 1,                           // 0-1
       'Piel circundante': 4,                // Macerada
     },
+    correctEvaluation: 'Grado 3',
+    questions: getQuestionsForCase(2),
   },
   {
     id: 3,
     image: caso3,
-    description: `
-      Usuario de 78 años con antecedente de hospitalización por ACV isquémico secuelado, cursa con lesión 
-      en zona sacra producto de la estasis prolongada.
-      Al examen físico destaca edema + en zona sacra, dolor eva 5, el apósito primario tiene 100% de exudado, 
-      turbio, con mal olor.
-    `,
+    description: descriptions.case3,
     table: tables.find((table) => table.name === 'Heridas y Úlceras'),
-    correctEvaluation: 'Tipo 3',
     correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 3,                 // > 3-6 cm
@@ -77,6 +72,8 @@ const cases = [
       'Dolor': 1,                           // 0-1
       'Piel circundante': 3,                // Macerada
     },
+    correctEvaluation: 'Tipo 3',
+    questions: getQuestionsForCase(3),
   },
 ];
 

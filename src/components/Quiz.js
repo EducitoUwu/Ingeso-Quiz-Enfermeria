@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/Quiz.css';
 import Table from './Table';
 import { useScreen } from '../contexts/ScreenContext';
