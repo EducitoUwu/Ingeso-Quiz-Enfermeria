@@ -8,11 +8,10 @@
 
 .question-block {
     margin-bottom: 15px;
-    text-align: left;
 }
 
 .options-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 10px 0;
 }

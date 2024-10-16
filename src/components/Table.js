@@ -42,73 +42,75 @@ const Table = ({ aspects = [], evaluation = [], onSubmit, resetSelection, correc
     ? Math.max(...aspects.map((aspect) => aspect.options.length)) 
     : 0;
 
-  return (
-    <>
-      <table className="score-table">
-        <thead>
-          <tr>
-            <th>Aspecto</th>
-            {Array.from({ length: getMaxOptions() }).map((_, index) => (
-              <th key={index}>{index + 1}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {aspects.map((aspect, index) => (
-            <tr key={index}>
-              <td>{aspect.name}</td>
-              {aspect.options.map((option, optIndex) => {
-                const isCorrect = correctAspects && correctAspects[aspect.name] === option.score;
-                const isSelected = selectedOptions[index] === option.score;
-                const isIncorrect = isSelected && !isCorrect;
-
-                return (
-                  <td
-                    key={optIndex}
-                    className={`option-cell 
-                      ${submitted && isCorrect ? 'correct' : ''} 
-                      ${submitted && isIncorrect ? 'incorrect' : ''}
-                      ${isSelected && !readOnly ? 'selected' : ''}`}
-                    onClick={() => handleOptionSelect(index, option.score)}
-                  >
-                    {option.label}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {!readOnly && (
-        <>
-          <div className="total-score">
-            <strong>Puntaje total:</strong> {totalScore}
-          </div>
-
-          <div className="evaluation-list">
-            <h3>Tipos de Evaluación:</h3>
-            {evaluation.map((e, index) => (
-              <div
-                key={index}
-                className={`evaluation-item ${currentEvaluationType === e.type ? 'active' : ''}`}
-              >
-                <strong>{e.type}</strong> (Puntos: {e.range[0]} - {e.range[1]})
-              </div>
-            ))}
-          </div>
-
-          <button
-            className="submit-button"
-            onClick={handleSubmit}
-            disabled={!selectedOptions.every((option) => option !== null)}
-          >
-            Enviar
-          </button>
-        </>
-      )}
-    </>
-  );
+    return (
+      <>
+        <div className="table-container">
+          <table className="score-table">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                {Array.from({ length: getMaxOptions() }).map((_, index) => (
+                  <th key={index}>{index + 1}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {aspects.map((aspect, index) => (
+                <tr key={index}>
+                  <td>{aspect.name}</td>
+                  {aspect.options.map((option, optIndex) => {
+                    const isCorrect = correctAspects && correctAspects[aspect.name] === option.score;
+                    const isSelected = selectedOptions[index] === option.score;
+                    const isIncorrect = isSelected && !isCorrect;
+    
+                    return (
+                      <td
+                        key={optIndex}
+                        className={`option-cell 
+                          ${submitted && isCorrect ? 'correct' : ''} 
+                          ${submitted && isIncorrect ? 'incorrect' : ''}
+                          ${isSelected && !readOnly ? 'selected' : ''}`}
+                        onClick={() => handleOptionSelect(index, option.score)}
+                      >
+                        {option.label}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+    
+        {!readOnly && (
+          <>
+            <div className="total-score">
+              <strong>Puntaje total:</strong> {totalScore}
+            </div>
+    
+            <div className="evaluation-list">
+              <h3>Tipos de Evaluación:</h3>
+              {evaluation.map((e, index) => (
+                <div
+                  key={index}
+                  className={`evaluation-item ${currentEvaluationType === e.type ? 'active' : ''}`}
+                >
+                  <strong>{e.type}</strong> (Puntos: {e.range[0]} - {e.range[1]})
+                </div>
+              ))}
+            </div>
+    
+            <button
+              className="submit-button"
+              onClick={handleSubmit}
+              disabled={!selectedOptions.every((option) => option !== null)}
+            >
+              Enviar
+            </button>
+          </>
+        )}
+      </>
+    );   
 };
 
 export default Table;

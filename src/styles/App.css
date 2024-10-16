@@ -1,16 +1,10 @@
-body {
+body, html {
     background-color: #145f77;
     color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-}
-
-html, body {
     width: 100%;
     overflow-x: hidden;
 }
@@ -34,7 +28,7 @@ button {
 }
 
 button:hover {
-    background-color: #e67e22;;
+    background-color: #e67e22;
 }
 
 button:disabled {
@@ -60,18 +54,3 @@ img {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-        margin: 10px 0;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-}

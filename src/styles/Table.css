@@ -1,8 +1,14 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
 .score-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    overflow-x: auto;
+    table-layout: fixed;
+    min-width: 600px;
 }
 
 .score-table th,
@@ -11,6 +17,9 @@
     padding: 8px;
     text-align: center;
     word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .score-table th {
@@ -33,7 +42,7 @@
 
 .option-cell.selected {
     background-color: #3498db;
-    color: white; 
+    color: white;
     border: 2px solid #2980b9;
     font-weight: bold;
 }
@@ -62,11 +71,4 @@
     background-color: #eaf4fc;
     border: 2px solid #3498db;
     font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .score-table th, 
-    .score-table td {
-        padding: 4px;
-    }
 }
