@@ -93,7 +93,7 @@ const Table = ({ aspects = [], evaluation = [], onSubmit, resetSelection, correc
                 key={index}
                 className={`evaluation-item ${currentEvaluationType === e.type ? 'active' : ''}`}
               >
-                <strong>{e.type}</strong>: {e.description} (Puntos: {e.range[0]} - {e.range[1]})
+                <strong>{e.type}</strong> (Puntos: {e.range[0]} - {e.range[1]})
               </div>
             ))}
           </div>

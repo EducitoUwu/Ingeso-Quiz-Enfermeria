@@ -94,10 +94,10 @@ const tables = [
         },
       ],
       evaluation: [
-        { type: 'Tipo 1', range: [10, 15], description: 'Puntaje: 10-15.' },
-        { type: 'Tipo 2', range: [16, 21], description: 'Puntaje: 16-21.' },
-        { type: 'Tipo 3', range: [22, 27], description: 'Puntaje: 22-27.' },
-        { type: 'Tipo 4', range: [28, 40], description: 'Puntaje: 28-40' },
+        { type: 'Tipo 1', range: [10, 15]},
+        { type: 'Tipo 2', range: [16, 21]},
+        { type: 'Tipo 3', range: [22, 27]},
+        { type: 'Tipo 4', range: [28, 40]},
       ],
     },
     {
@@ -205,11 +205,11 @@ const tables = [
           },
         ],
         evaluation: [
-          { type: 'Grado 1', range: [10, 15], description: 'Puntaje: 10-15.' },
-          { type: 'Grado 2', range: [16, 26], description: 'Puntaje: 16-26.' },
-          { type: 'Grado 3', range: [27, 37], description: 'Puntaje: 27-37.' },
-          { type: 'Grado 4', range: [38, 45], description: 'Puntaje: 38-45' },
-          { type: 'Grado 5', range: [46, 50], description: 'Puntaje: 46-50' },
+          { type: 'Grado 1', range: [10, 15]},
+          { type: 'Grado 2', range: [16, 26]},
+          { type: 'Grado 3', range: [27, 37]},
+          { type: 'Grado 4', range: [38, 45]},
+          { type: 'Grado 5', range: [46, 50]},
         ],
       },
       {
@@ -307,10 +307,10 @@ const tables = [
           },
         ],
         evaluation: [
-          { type: 'Tipo 1', range: [10, 15], description: 'Puntaje: 10-15.' },
-          { type: 'Tipo 2', range: [16, 21], description: 'Puntaje: 16-21.' },
-          { type: 'Tipo 3', range: [22, 27], description: 'Puntaje: 22-27.' },
-          { type: 'Tipo 4', range: [28, 40], description: 'Puntaje: 28-40' },
+          { type: 'Tipo 1', range: [10, 15]},
+          { type: 'Tipo 2', range: [16, 21]},
+          { type: 'Tipo 3', range: [22, 27]},
+          { type: 'Tipo 4', range: [28, 40]},
         ],
       },
 ];

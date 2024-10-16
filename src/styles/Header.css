@@ -1,0 +1,27 @@
+.header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.header-logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+.header-home-button {
+    background-color: #e74c3c;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.header-home-button:hover {
+    background-color: #c0392b;
+}

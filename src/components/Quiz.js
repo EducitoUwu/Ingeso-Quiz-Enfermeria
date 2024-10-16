@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/Quiz.css';
 import { useScreen } from '../contexts/ScreenContext';
+import Header from './Header';
 import Table from './Table';
 import Question from './Question';
 
 const Quiz = ({ questions }) => {
+  const [showIntroduction, setShowIntroduction] = useState(true);
   const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [resetSelection, setResetSelection] = useState(false);
@@ -27,11 +29,11 @@ const Quiz = ({ questions }) => {
   };
 
   const handleSubmitTable = () => {
-    setSubmitted(true); // Marca la tabla como enviada
+    setSubmitted(true);
   };
 
   const handleShowQuestions = () => {
-    setShowQuestions(true); // Muestra las preguntas después de la tabla
+    setShowQuestions(true);
   };
 
   const currentCase = questions[currentCaseIndex];
@@ -43,6 +45,7 @@ const Quiz = ({ questions }) => {
   if (showResult) {
     return (
       <div className="quiz-container">
+        <Header />
         <h1>¡Quiz Completado!</h1>
         <button className="quiz-button" onClick={() => setScreen('home')}>
           Volver a inicio
@@ -51,39 +54,57 @@ const Quiz = ({ questions }) => {
     );
   }
 
+  if (showIntroduction) {
+    return (
+      <>
+        <Header useColorLogo />
+        <div className="quiz-container">
+          <h1>Instrucciones del Quiz</h1>
+          <p>En este quiz, se te presentará una imagen de un caso clínico junto a una breve descripción de este, debe responder la tabla de aspectos y las preguntas asociadas a esta</p>
+          <button
+            className="quiz-button"
+            onClick={() => setShowIntroduction(false)}
+          >
+            Empezar Quiz
+          </button>
+        </div>
+      </>
+    );
+  }
   return (
     <div className="quiz-container">
-      {/* Botón de Volver a Inicio en la parte superior */}
-      <div className="back-button-container">
-        <button className="back-button" onClick={() => setScreen('home')}>
-          Volver a inicio
-        </button>
-      </div>
+      <Header useColorLogo /> {/* Header dentro del contenedor */}
   
-      <h1>Quiz de Enfermería</h1>
-      <div className="question-container">
-        <img src={currentCase.image} alt="Caso clínico" />
-        <p>{currentCase.description}</p>
+      <div className="quiz-content">
+        <h1>Quiz de Enfermería</h1>
+        <div className="question-container">
+          <img src={currentCase.image} alt="Caso clínico" />
+          <p>{currentCase.description}</p>
   
-        {!showQuestions ? (
-          <Table
-            aspects={currentCase.table.aspects || []}
-            correctAspects={currentCase.correctAspects || {}}
-            evaluation={currentCase.table.evaluation || []}
-            onSubmit={handleSubmitTable}
-            resetSelection={resetSelection}
-            readOnly={submitted}
-            submitted={submitted}
-          />
-        ) : (
-          <Question questions={currentCase.questions} onNextCase={handleNextCase} />
-        )}
+          {!submitted && (
+            <p className="instruction">Selecciona los aspectos de la tabla.</p>
+          )}
   
-        {submitted && !showQuestions && (
-          <button className="quiz-button" onClick={handleShowQuestions}>
-            Ver Preguntas
-          </button>
-        )}
+          {!showQuestions ? (
+            <Table
+              aspects={currentCase.table.aspects || []}
+              correctAspects={currentCase.correctAspects || {}}
+              evaluation={currentCase.table.evaluation || []}
+              onSubmit={handleSubmitTable}
+              resetSelection={resetSelection}
+              readOnly={submitted}
+              submitted={submitted}
+            />
+          ) : (
+            <Question questions={currentCase.questions} onNextCase={handleNextCase} />
+          )}
+  
+          {submitted && !showQuestions && (
+            <button className="quiz-button" onClick={handleShowQuestions}>
+              Ver Preguntas
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );  
