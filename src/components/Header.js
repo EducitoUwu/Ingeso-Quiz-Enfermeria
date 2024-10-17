@@ -10,15 +10,17 @@ const Header = ({ useColorLogo }) => {
 
   return (
     <div className="header">
-      <img className="header-logo" src={logo} alt="Logo Universidad Católica del Norte" />
-      <button
-        className="header-home-button"
-        onClick={() => setScreen('home')}
-      >
-        Inicio
-      </button>
+      <div className="header-content">
+        <img className="header-logo" src={logo} alt="Logo Universidad Católica del Norte" />
+        <button
+          className="header-home-button"
+          onClick={() => setScreen('home')}
+        >
+          Inicio
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Header
+export default Header;

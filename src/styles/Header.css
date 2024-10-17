@@ -1,12 +1,11 @@
 .header {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    display: flex;
+}
+
+.header-content {
     display: flex;
     align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    background: transparent;
+    gap: 10px;
 }
 
 .header-logo {
@@ -20,6 +19,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    border: none;
 }
 
 .header-home-button:hover {

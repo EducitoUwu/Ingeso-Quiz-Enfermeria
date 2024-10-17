@@ -74,7 +74,6 @@ const Quiz = ({ questions }) => {
   return (
     <div className="quiz-container">
       <Header useColorLogo /> {/* Header dentro del contenedor */}
-  
       <div className="quiz-content">
         <h1>Quiz de Enfermería</h1>
         <div className="question-container">

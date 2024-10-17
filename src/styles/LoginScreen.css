@@ -1,13 +1,17 @@
 .login-screen {
-  margin-top: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .login-logo {
   width: 150px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .login-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  color: white;
 }
