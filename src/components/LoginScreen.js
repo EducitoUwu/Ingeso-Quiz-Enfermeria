@@ -11,12 +11,18 @@ const LoginScreen = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-
-      if (user.email.match(/^[^@]+@[^@]+\.ucn\.cl$/)) {
+  
+      const validDomains = ['@ucn.cl', '@ce.ucn.cl', '@alumnos.ucn.cl'];
+      const userEmail = user.email;
+  
+      // Verifica si el email termina con alguno de los dominios válidos
+      const isValidDomain = validDomains.some(domain => userEmail.endsWith(domain));
+  
+      if (isValidDomain) {
         localStorage.setItem('isAuthenticated', true);
         setIsAuthenticated(true);
       } else {
-        alert('Solo se permiten correos del dominio ucn.cl');
+        alert('Solo se permiten correos UCN');
         auth.signOut();
       }
     } catch (error) {
@@ -24,6 +30,7 @@ const LoginScreen = () => {
       alert('Ocurrió un error al intentar iniciar sesión.');
     }
   };
+  
 
   return (
     <div className="login-screen">
