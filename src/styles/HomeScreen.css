@@ -1,6 +1,10 @@
 .home-screen {
-  text-align: center;
-  margin-top: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .home-logo {
