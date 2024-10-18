@@ -40,3 +40,44 @@
     border: 2px solid #3498db;
     background-color: #eaf4fc;
 }
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .questions-container {
+    animation: fade-in 0.5s ease-in-out;
+  }
+  
+  .option-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    border-radius: 8px;
+  }
+  
+  .option-item.selected {
+    background-color: #3498db;
+    color: white;
+    border: 2px solid #2980b9;
+    font-weight: bold;
+  }
+  
+  .option-item.correct {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .option-item.incorrect {
+    background-color: #e74c3c;
+    color: white;
+  }
+  

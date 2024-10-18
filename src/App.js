@@ -7,6 +7,8 @@ import LoginScreen from './components/LoginScreen';
 import { useAuth } from './contexts/AuthContext';
 import { useScreen } from './contexts/ScreenContext';
 import cases from './data/cases';
+import { Howl } from 'howler';
+import backgroundMusic from './assets/background.mp3';
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -19,11 +21,14 @@ function App() {
 
     const shuffledCases = cases.sort(() => Math.random() - 0.5).slice(0, 3);
     setSelectedCases(shuffledCases);
+
+    const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.5 });
+    music.play();
+
+    return () => music.stop();
   }, [setIsAuthenticated]);
 
-  if (!isAuthenticated) {
-    return <LoginScreen />;
-  }
+  if (!isAuthenticated) return <LoginScreen />;
 
   return (
     <>
@@ -35,3 +40,4 @@ function App() {
 }
 
 export default App;
+
