@@ -60,7 +60,7 @@ const Quiz = ({ questions }) => {
         <Header useColorLogo />
         <div className="quiz-container">
           <h1>Instrucciones del Quiz</h1>
-          <p>En este quiz, se te presentará una imagen de un caso clínico junto a una breve descripción de este, debe responder la tabla de aspectos y las preguntas asociadas a esta</p>
+          <p>En este quiz, se te presentará un caso clínico junto a una breve descripción de este, con esta información, deberás clasificar la herida o lesión según el diagrama de valoración apropiado para ella y responder las preguntas que te haremos para planificar los cuidados de enfermería en la lesión</p>
           <button
             className="quiz-button"
             onClick={() => setShowIntroduction(false)}
@@ -81,7 +81,7 @@ const Quiz = ({ questions }) => {
           <p>{currentCase.description}</p>
   
           {!submitted && (
-            <p className="instruction">Selecciona los aspectos de la tabla.</p>
+            <p className="instruction">De acuerdo a lo anteriormente planteado y a la valoración realizada, califique según el siguiente diagrama el estadío en el que se encuentra la úlcera</p>
           )}
   
           {!showQuestions ? (
