@@ -81,7 +81,7 @@ const Quiz = ({ questions }) => {
           <p>{currentCase.description}</p>
   
           {!submitted && (
-            <p className="instruction">De acuerdo a lo anteriormente planteado y a la valoración realizada, califique según el siguiente diagrama el estadío en el que se encuentra la úlcera</p>
+            <p className="instruction">De acuerdo a lo anteriormente planteado y a la valoración realizada, califique según el siguiente diagrama el estado en el que se encuentra la úlcera</p>
           )}
   
           {!showQuestions ? (
