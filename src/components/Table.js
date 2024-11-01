@@ -71,6 +71,7 @@ const Table = ({ aspects = [], evaluation = [], onSubmit, resetSelection, correc
                           ${submitted && isIncorrect ? 'incorrect' : ''}
                           ${isSelected && !readOnly ? 'selected' : ''}`}
                         onClick={() => handleOptionSelect(index, option.score)}
+                        title={option.definition || ''}
                       >
                         {option.label}
                       </td>
