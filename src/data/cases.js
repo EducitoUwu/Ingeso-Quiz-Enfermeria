@@ -19,7 +19,7 @@ const cases = [
     id: 1,
     image: caso1,
     description: descriptions.case1,
-    table: tables.find((table) => table.name === 'Ulcera venosa'),
+    table: tables.find((table) => table.name === 'Úlcera venosa'),
     correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 3,                 // > 5-10 cm
@@ -39,7 +39,7 @@ const cases = [
     id: 2,
     image: caso2,
     description: descriptions.case2,
-    table: tables.find((table) => table.name === 'Ulcera de pié diabético'),
+    table: tables.find((table) => table.name === 'Úlcera de pié diabético'),
     correctAspects: {
       'Aspecto': 3,                         // Amarillo pálido
       'Mayor extensión': 5,                 // > 10 cm
