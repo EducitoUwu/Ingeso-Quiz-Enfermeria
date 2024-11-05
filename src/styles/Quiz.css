@@ -63,3 +63,9 @@
 .quiz-content {
     margin-top: 20px;
 }
+
+.table-feedback {
+    padding: 20px;
+    border-left: 4px solid #ed9441;
+    border-radius: 8px;
+}

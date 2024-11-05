@@ -33,6 +33,7 @@ const cases = [
       'Piel circundante': 4,                // Macerada
     },
     correctEvaluation: 'Tipo 4',
+    feedback: 'De acuerdo a las características valoradas en esta lesión y las descritas en el caso clínico, se categoriza la herida en tipo 4 ya que se obtienen 28 puntos en el diagrama de valoración de úlceras.',
     questions: getQuestionsForCase(1),
   },
   {
@@ -53,6 +54,7 @@ const cases = [
       'Piel circundante': 4,                // Macerada
     },
     correctEvaluation: 'Grado 3',
+    feedback: 'De acuerdo a las características valoradas en esta lesión y las descritas en el caso clínico, se categoriza la herida en tipo 3 ya que se obtienen 33 puntos en el diagrama de valoración de úlceras.',
     questions: getQuestionsForCase(2),
   },
   {
@@ -73,6 +75,7 @@ const cases = [
       'Piel circundante': 3,                // Macerada
     },
     correctEvaluation: 'Tipo 3',
+    feedback: 'De acuerdo a las características valoradas en esta lesión y las descritas en el caso clínico, se categoriza la herida en tipo 3 ya que se obtienen 26 puntos en el diagrama de valoración de úlceras.',
     questions: getQuestionsForCase(3),
   },
 ];

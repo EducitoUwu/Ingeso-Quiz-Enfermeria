@@ -55,7 +55,7 @@ const Quiz = ({ questions }) => {
       ) : showIntroduction ? (
         <div className="quiz-container">
           <h1>Algunas instrucciones antes de iniciar</h1>
-          <p>Cada caso clínico comenzará con una imagen y una descripción de este, debes analizar la información entregada y realizar la valoración de la lesión según el diagrama de valoración que corresponda a cada caso</p>
+          <p>Cada caso clínico comenzará con una imagen y una descripción de este. Debes analizar la información entregada y realizar la valoración de la lesión según el diagrama de valoración que corresponda a cada caso.</p>
           <button
             className="quiz-button"
             onClick={() => setShowIntroduction(false)}
@@ -71,7 +71,7 @@ const Quiz = ({ questions }) => {
             <p>{currentCase.description}</p>
 
             {!submitted && (
-              <p className="instruction">Según el análisis del caso clínico presentado, seleccione en el siguiente diagrama, el puntaje que corresponde a la valoración realizada (tabla deslizable):</p>
+              <p className="instruction">Según el análisis del caso clínico presentado, seleccione en el siguiente diagrama el puntaje que corresponde a la valoración realizada (tabla deslizable):</p>
             )}
 
             {!showQuestions ? (
@@ -92,9 +92,12 @@ const Quiz = ({ questions }) => {
             )}
 
             {submitted && !showQuestions && (
-              <button className="quiz-button" onClick={handleShowQuestions}>
-                Ver Preguntas
-              </button>
+              <>
+                <p className="table-feedback">{currentCase.feedback}</p>
+                <button className="quiz-button" onClick={handleShowQuestions}>
+                  Ver Preguntas
+                </button>
+              </>
             )}
           </div>
         </div>
