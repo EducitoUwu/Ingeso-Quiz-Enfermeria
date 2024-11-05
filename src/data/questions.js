@@ -2,7 +2,7 @@ const questions = [
     // Caso 1
     {
         id: 1,
-        question: '¿Etiología?',
+        question: '¿A qué etiología corresponde el caso analizado?',
         options: [
             'Pie diabético',
             'Lesión por presión',
@@ -14,7 +14,7 @@ const questions = [
     },
     {
         id: 2,
-        question: '¿A qué pertenece la herida? (Úlcera venosa)',
+        question: 'Según la valoración realizada en el caso presentado, seleccione el tipo de úlcera venosa al que corresponde',
         options: [
             'Infectada',
             'Con colonización crítica',
@@ -24,7 +24,7 @@ const questions = [
     },
     {
         id: 3,
-        question: '¿Apósito primario?',
+        question: '¿Qué apósito primario utilizará en este caso?',
         options: [
             'Hidrogel',
             'Inhib. de la metaloproteasa',
@@ -37,7 +37,7 @@ const questions = [
     },
     {
         id: 4,
-        question: '¿Apósito secundario?',
+        question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Tradicional especial'],
     },
@@ -50,7 +50,7 @@ const questions = [
     // Caso 2
     {
         id: 6,
-        question: '¿Etiología?',
+        question: '¿A qué etiología corresponde el caso analizado?',
         options: [
             'Pie diabético',
             'Lesión por presión',
@@ -62,7 +62,7 @@ const questions = [
     },
     {
         id: 7,
-        question: '¿A qué pertenece la herida? (Pie diabético)',
+        question: 'Según la valoración realizada en el caso presentado, seleccione el tipo de pie diabético al que corresponde',
         options: [
             'Grado 1, úlcera superficial sin infección',
             'Grado 2, sin infección compromiso de tendón',
@@ -76,7 +76,7 @@ const questions = [
     },
     {
         id: 8,
-        question: '¿Apósito primario?',
+        question: '¿Qué apósito primario utilizará en este caso?',
         options: [
             'Algínato con plata',
             'Carboximetilcelulosa con plata',
@@ -95,7 +95,7 @@ const questions = [
     },
     {
         id: 9,
-        question: '¿Apósito secundario?',
+        question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Ambos'],
     },
@@ -108,7 +108,7 @@ const questions = [
     // Caso 3
     {
         id: 11,
-        question: '¿Etiología?',
+        question: '¿A qué etiología corresponde el caso analizado?',
         options: [
             'Pie diabético',
             'Lesión por presión',
@@ -120,7 +120,7 @@ const questions = [
     },
     {
         id: 12,
-        question: '¿A qué pertenece la herida? (Lesión por presión)',
+        question: 'Según la valoración realizada en el caso presentado, seleccione el tipo de lesión por presión al que corresponde',
         options: [
             'Tipo 2',
             'Tipos 3 y 4 sin infección',
@@ -130,7 +130,7 @@ const questions = [
     },
     {
         id: 13,
-        question: '¿Apósito primario?',
+        question: '¿Qué apósito primario utilizará en este caso?',
         options: [
             'Espuma con plata',
             'Gasa con plata',
@@ -144,7 +144,7 @@ const questions = [
     },
     {
         id: 14,
-        question: '¿Apósito secundario?',
+        question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Ambos'],
     },

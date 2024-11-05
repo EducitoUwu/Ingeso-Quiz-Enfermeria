@@ -15,3 +15,25 @@
 .login-title {
   color: white;
 }
+
+.login-description {
+  margin-top: 20px;
+  text-align: center;
+  color: #e0e0e0;
+  max-width: 80%;
+  padding: 20px;
+  background-color: rgba(33, 47, 61, 0.8);
+  border-left: 4px solid #ed9441;
+  border-radius: 8px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1.6;
+}
+
+.login-description ol {
+  padding-left: 20px; /* Ajuste de la indentación */
+}
+
+.login-description li {
+  margin-bottom: 10px; /* Espacio entre elementos de la lista */
+  color: #e0e0e0; /* Color de texto, si quieres asegurar consistencia */
+}

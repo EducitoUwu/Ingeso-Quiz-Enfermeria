@@ -42,25 +42,20 @@ const Quiz = ({ questions }) => {
     return <div>Cargando caso...</div>;
   }
 
-  if (showResult) {
-    return (
-      <div className="quiz-container">
-        <Header />
-        <h1>¡Quiz Completado!</h1>
-        <button className="quiz-button" onClick={() => setScreen('home')}>
-          Volver a inicio
-        </button>
-      </div>
-    );
-  }
-
-  if (showIntroduction) {
-    return (
-      <>
-        <Header useColorLogo />
+  return (
+    <>
+      <Header useColorLogo />
+      {showResult ? (
         <div className="quiz-container">
-          <h1>Instrucciones del Quiz</h1>
-          <p>En este quiz, se te presentará un caso clínico junto a una breve descripción de este, con esta información, deberás clasificar la herida o lesión según el diagrama de valoración apropiado para ella y responder las preguntas que te haremos para planificar los cuidados de enfermería en la lesión</p>
+          <h1>¡Quiz Completado!</h1>
+          <button className="quiz-button" onClick={() => setScreen('home')}>
+            Volver a inicio
+          </button>
+        </div>
+      ) : showIntroduction ? (
+        <div className="quiz-container">
+          <h1>Algunas instrucciones antes de iniciar</h1>
+          <p>Cada caso clínico comenzará con una imagen y una descripción de este, debes analizar la información entregada y realizar la valoración de la lesión según el diagrama de valoración que corresponda a cada caso</p>
           <button
             className="quiz-button"
             onClick={() => setShowIntroduction(false)}
@@ -68,45 +63,44 @@ const Quiz = ({ questions }) => {
             Empezar Quiz
           </button>
         </div>
-      </>
-    );
-  }
-  return (
-    <div className="quiz-container">
-      <Header useColorLogo /> {/* Header dentro del contenedor */}
-      <div className="quiz-content">
-        <h1>Quiz de Enfermería</h1>
-        <div className="question-container">
-          <img src={currentCase.image} alt="Caso clínico" />
-          <p>{currentCase.description}</p>
-  
-          {!submitted && (
-            <p className="instruction">De acuerdo a lo anteriormente planteado y a la valoración realizada, califique según el siguiente diagrama el estado en el que se encuentra la úlcera</p>
-          )}
-  
-          {!showQuestions ? (
-            <Table
-              aspects={currentCase.table.aspects || []}
-              correctAspects={currentCase.correctAspects || {}}
-              evaluation={currentCase.table.evaluation || []}
-              onSubmit={handleSubmitTable}
-              resetSelection={resetSelection}
-              readOnly={submitted}
-              submitted={submitted}
-            />
-          ) : (
-            <Question questions={currentCase.questions} onNextCase={handleNextCase} />
-          )}
-  
-          {submitted && !showQuestions && (
-            <button className="quiz-button" onClick={handleShowQuestions}>
-              Ver Preguntas
-            </button>
-          )}
+      ) : (
+        <div className="quiz-container">
+          <h1>Quiz de Enfermería</h1>
+          <div className="question-container">
+            <img src={currentCase.image} alt="Caso clínico" />
+            <p>{currentCase.description}</p>
+
+            {!submitted && (
+              <p className="instruction">Según el análisis del caso clínico presentado, seleccione en el siguiente diagrama, el puntaje que corresponde a la valoración realizada (tabla deslizable):</p>
+            )}
+
+            {!showQuestions ? (
+              <Table
+                aspects={currentCase.table.aspects || []}
+                correctAspects={currentCase.correctAspects || {}}
+                evaluation={currentCase.table.evaluation || []}
+                onSubmit={handleSubmitTable}
+                resetSelection={resetSelection}
+                readOnly={submitted}
+                submitted={submitted}
+              />
+            ) : (
+              <Question
+                questions={currentCase.questions}
+                onNextCase={handleNextCase}
+              />
+            )}
+
+            {submitted && !showQuestions && (
+              <button className="quiz-button" onClick={handleShowQuestions}>
+                Ver Preguntas
+              </button>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
-  );  
+      )}
+    </>
+  );
 };
 
 export default Quiz;

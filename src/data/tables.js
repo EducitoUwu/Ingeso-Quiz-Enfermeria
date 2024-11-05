@@ -43,7 +43,7 @@ const tables = [
           options: [
             { label: 'Sin exudado', score: 1, definition: 'No existe presencia de líquido. Formación de la dermis' },
             { label: 'Seroso', score: 2, definition: 'Líquido claro, transparente o de color amarillo claro. Presente con 100% de tejido de granulación' },
-            { label: 'Hematócito o Turbio', score: 3, definition: ': Liquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
+            { label: 'Hematócito o Turbio', score: 3, definition: 'Liquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
             { label: 'Purulento', score: 4, definition: 'Liquido espeso cremoso de color amarillo-verdoso. Habitualmente cuando hay infección' },
           ],
         },
