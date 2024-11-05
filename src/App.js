@@ -22,10 +22,14 @@ function App() {
     const shuffledCases = cases.sort(() => Math.random() - 0.5).slice(0, 3);
     setSelectedCases(shuffledCases);
 
-    const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.5 });
-    music.play();
-
-    return () => music.stop();
+    if (authenticated){
+      const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.2 });
+      music.play();
+      return () => music.stop();
+    }
+    
+    
+    
   }, [setIsAuthenticated]);
 
   if (!isAuthenticated) return <LoginScreen />;

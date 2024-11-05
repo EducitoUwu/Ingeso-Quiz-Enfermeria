@@ -3,6 +3,8 @@ import '../styles/LoginScreen.css';
 import logo from '../assets/escudo-ucn-white.png';
 import { auth, provider, signInWithPopup } from '../firebaseConfig';
 import { useAuth } from '../contexts/AuthContext';
+import { Howl } from 'howler';
+import backgroundMusic from '../assets/background.mp3';
 
 const LoginScreen = () => {
   const { setIsAuthenticated } = useAuth();
@@ -20,6 +22,11 @@ const LoginScreen = () => {
       if (isValidDomain) {
         localStorage.setItem('isAuthenticated', true);
         setIsAuthenticated(true);
+        
+        const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.2 });
+        music.play();
+        return () => music.stop();
+        
       } else {
         alert('Solo se permiten correos UCN');
         auth.signOut();
