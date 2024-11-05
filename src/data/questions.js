@@ -11,6 +11,7 @@ const questions = [
             'Dermatitis asociada a incontinencia',
         ],
         answers: ['Úlcera venosa'],
+        feedback: 'De acuerdo con los signos clínicos y la localización, esta lesión es característica de una úlcera venosa.'
     },
     {
         id: 2,
@@ -21,6 +22,7 @@ const questions = [
             'Con colonización baja',
         ],
         answers: ['Con colonización baja'],
+        feedback: 'La úlcera presenta una colonización baja, ya que no muestra signos de infección activa.'
     },
     {
         id: 3,
@@ -34,18 +36,21 @@ const questions = [
             'Transparentes no adhesivos (poliéster, nylon)',
         ],
         answers: ['Espuma hidrofílica'],
+        feedback: 'La espuma hidrofílica es adecuada para manejar el exudado moderado presente en la úlcera venosa.'
     },
     {
         id: 4,
         question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Tradicional especial'],
+        feedback: 'En este caso, un apósito tradicional  especial es válida como secundario.'
     },
     {
         id: 5,
-        question: '¿Frecuencia de cambio? (días)',
+        question: '¿Cada cuánto tiempo programa la curación? (días)',
         options: ['1', '3-4', '7'],
         answers: ['3-4'],
+        feedback: 'La frecuencia de cambio es cada 3 a 4 días ya que no se encuentra infectada y el tiempo máximo de duración de la espuma hidrofílica corresponde a 3 a 4 días, o SOS.'
     },
     // Caso 2
     {
@@ -59,6 +64,7 @@ const questions = [
             'Dermatitis asociada a incontinencia',
         ],
         answers: ['Pie diabético'],
+        feedback: 'El caso muestra características típicas de un pie diabético, incluyendo sensibilidad disminuida y lesión plantar.'
     },
     {
         id: 7,
@@ -73,6 +79,7 @@ const questions = [
             'Grado 5, gangrena todo el pie',
         ],
         answers: ['Grado 3, infectado compromiso de hueso'],
+        feedback: 'El contacto con el hueso y la infección sugieren un pie diabético de grado 3 con compromiso óseo.'
     },
     {
         id: 8,
@@ -92,18 +99,21 @@ const questions = [
             'Espuma hidrofílica con plata',
             'Plata nanocristalina',
         ],
+        feedback: 'Apósitos con plata son recomendados para el manejo de heridas con alta carga bacteriana y exudado.'
     },
     {
         id: 9,
         question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Ambos'],
+        feedback: 'Para este tipo de úlcera, ambos tipos de apósitos secundarios pueden ser utilizados según la situación.'
     },
     {
         id: 10,
-        question: '¿Frecuencia de cambio? (días)',
+        question: '¿Cada cuánto tiempo programa la curación? (días)',
         options: ['1', '3-4', '7'],
         answers: ['1'],
+        feedback: 'Dado el nivel de infección y exudado, es necesario realizar la curación diariamente para un control adecuado.'
     },
     // Caso 3
     {
@@ -117,6 +127,7 @@ const questions = [
             'Dermatitis asociada a incontinencia',
         ],
         answers: ['Lesión por presión'],
+        feedback: 'La lesión en la zona sacra debido a estasis prolongada es un claro indicativo de una lesión por presión.'
     },
     {
         id: 12,
@@ -127,6 +138,7 @@ const questions = [
             'Tipos 3 y 4 infectada',
         ],
         answers: ['Tipos 3 y 4 infectada'],
+        feedback: 'La infección y el exudado turbio sugieren una lesión por presión avanzada, clasificada en tipos 3 y 4.'
     },
     {
         id: 13,
@@ -141,18 +153,21 @@ const questions = [
             'Plata nanocristalina',
         ],
         answers: ['Gasa con plata', 'Tull con plata'],
+        feedback: 'Para este tipo de lesión con infección, gasas con plata o tull con plata son eficaces en el manejo bacteriano.'
     },
     {
         id: 14,
         question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
         answers: ['Ambos'],
+        feedback: 'Ambos tipos de apósitos secundarios son adecuados para asegurar la protección y absorción del exudado.'
     },
     {
         id: 15,
-        question: '¿Frecuencia de cambio? (días)',
+        question: '¿Cada cuánto tiempo programa la curación? (días)',
         options: ['1', '3-4', '7'],
         answers: ['1'],
+        feedback: 'Debido al exudado y la infección, se recomienda una curación diaria para mantener el control de la lesión.'
     },
 ];
 

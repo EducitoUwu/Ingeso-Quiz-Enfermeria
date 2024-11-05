@@ -87,6 +87,8 @@ const Question = ({ questions, onNextCase }) => {
           <button className="quiz-button" onClick={handleNextQuestion}>
             {currentQuestionIndex < questions.length - 1 ? 'Siguiente Pregunta' : 'Siguiente Caso'}
           </button>
+          {/* Mostrar feedback después de enviar la respuesta */}
+          <p className="question-feedback">{currentQuestion.feedback}</p>
         </>
       )}
     </div>
@@ -94,5 +96,3 @@ const Question = ({ questions, onNextCase }) => {
 };
 
 export default Question;
-
-

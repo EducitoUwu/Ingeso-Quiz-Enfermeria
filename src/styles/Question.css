@@ -40,6 +40,13 @@
     border: 2px solid #3498db;
     background-color: #eaf4fc;
 }
+
+.question-feedback {
+  padding: 20px;
+  border-left: 4px solid #ed9441;
+  border-radius: 8px;
+}
+
 @keyframes fade-in {
     from {
       opacity: 0;
