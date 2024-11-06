@@ -23,7 +23,7 @@ const LoginScreen = () => {
         localStorage.setItem('isAuthenticated', true);
         setIsAuthenticated(true);
         
-        const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.2 });
+        const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.01});
         music.play();
         return () => music.stop();
         
