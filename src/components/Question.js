@@ -14,7 +14,7 @@ const Question = ({ questions, onNextCase }) => {
   const [showAnimation, setShowAnimation] = useState(null);
 
   const playSound = (sound) => {
-    const soundEffect = new Howl({ src: [sound] ,volume: 0.01});
+    const soundEffect = new Howl({ src: [sound] ,volume: 0.02});
     soundEffect.play();
   };
 

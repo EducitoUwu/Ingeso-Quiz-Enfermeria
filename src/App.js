@@ -23,7 +23,7 @@ function App() {
     setSelectedCases(shuffledCases);
 
     if (authenticated){
-      const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.01 });
+      const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.03 });
       music.play();
       return () => music.stop();
     }
