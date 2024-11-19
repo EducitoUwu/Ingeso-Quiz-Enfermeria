@@ -33,8 +33,8 @@ const tables = [
           name: 'Exudado cantidad',
           options: [
             { label: 'Ausente', score: 1, definition: 'El apósito primario está seco al retirarlo' },
-            { label: 'Escaso', score: 2, definition: 'El opósito primario está moderadamente humedecido' },
-            { label: 'Moderado', score: 3, definition: 'El opósito primario está 100% humedecido y el secundario manchado' },
+            { label: 'Escaso', score: 2, definition: 'El apósito primario está moderadamente humedecido' },
+            { label: 'Moderado', score: 3, definition: 'El apósito primario está 100% humedecido y el secundario manchado' },
             { label: 'Abundante', score: 4, definition: 'El apósito primario y el secundario están totalmente mojados' },
           ],
         },
@@ -43,8 +43,8 @@ const tables = [
           options: [
             { label: 'Sin exudado', score: 1, definition: 'No existe presencia de líquido. Formación de la dermis' },
             { label: 'Seroso', score: 2, definition: 'Líquido claro, transparente o de color amarillo claro. Presente con 100% de tejido de granulación' },
-            { label: 'Hematócito o Turbio', score: 3, definition: 'Liquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
-            { label: 'Purulento', score: 4, definition: 'Liquido espeso cremoso de color amarillo-verdoso. Habitualmente cuando hay infección' },
+            { label: 'Hematócito o Turbio', score: 3, definition: 'Líquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
+            { label: 'Purulento', score: 4, definition: 'Líquido espeso cremoso de color amarillo-verdoso. Habitualmente cuando hay infección' },
           ],
         },
         {
@@ -68,7 +68,7 @@ const tables = [
         {
           name: 'Edema',
           options: [
-            { label: 'Ausente', score: 1, definition: 'No hay liquido subyacente alrededor de la úlcera' },
+            { label: 'Ausente', score: 1, definition: 'No hay líquido subyacente alrededor de la úlcera' },
             { label: '+', score: 2, definition: 'Edema de hasta 3 cm alrededor de la úlcera' },
             { label: '++', score: 3, definition: 'Abarca el 50% de la zona afectada' },
             { label: '+++', score: 4, definition: 'Se presenta en toda la zona afectada' },
@@ -137,9 +137,9 @@ const tables = [
             name: 'Exudado cantidad',
             options: [
               { label: 'Ausente', score: 1, definition: 'EI apósito primario está seco al retirarlo' },
-              { label: 'Escaso', score: 2, definition: 'EI opósito primario está hasta 50% humedecido' },
-              { label: 'Moderado', score: 3, definition: 'EI opósito primario está 100% humedecido' },
-              { label: 'Abundante', score: 4, definition: 'EI opósito primario está totalmente humedecido, traspasando el exudado al apósito secundario en 50% a 75%' },
+              { label: 'Escaso', score: 2, definition: 'EI apósito primario está hasta 50% humedecido' },
+              { label: 'Moderado', score: 3, definition: 'EI apósito primario está 100% humedecido' },
+              { label: 'Abundante', score: 4, definition: 'EI apósito primario está totalmente humedecido, traspasando el exudado al apósito secundario en 50% a 75%' },
               { label: 'Muy abundante', score: 5, definition: 'Tanto el apósito primario como el secundario están totalmente empapados, llegando a la maceración de los bordes de la úlcera' },
             ],
           },
@@ -148,8 +148,8 @@ const tables = [
             options: [
               { label: 'Sin exudado', score: 1, definition: 'No existe presencia de líquido' },
               { label: 'Seroso', score: 2, definition: 'Líquido claro, transparente o de color amarillo claro' },
-              { label: 'Turbio hemático', score: 3, definition: 'Liquido más espeso que el anterior (seroso), de color blanco o rojo' },
-              { label: 'Purulento', score: 4, definition: 'Liquido espeso cremoso de color amarillo verdoso' },
+              { label: 'Turbio hemático', score: 3, definition: 'Líquido más espeso que el anterior (seroso), de color blanco o rojo' },
+              { label: 'Purulento', score: 4, definition: 'Líquido espeso cremoso de color amarillo verdoso' },
               { label: 'Purulento gangrenoso', score: 5, definition: 'Líquido espeso, cremoso, de color verde o café, con trozos de tejido necrótico.' },
             ],
           },
@@ -176,7 +176,7 @@ const tables = [
           {
             name: 'Edema',
             options: [
-              { label: 'Ausente', score: 1, definition: 'No hay liquido subyacente alrededor de la úlcera. Se mide a través de la presión dactilar' },
+              { label: 'Ausente', score: 1, definition: 'No hay líquido subyacente alrededor de la úlcera. Se mide a través de la presión dactilar' },
               { label: '+', score: 2, definition: 'Al presionar con la yema del dedo índice alrededor de la úlcera, la piel se hunde levemente' },
               { label: '++', score: 3, definition: 'El 50% de la extremidad inferior está edematosa' },
               { label: '+++', score: 4, definition: 'El 100% de la extremidad inferior esto edematosa' },
@@ -246,8 +246,8 @@ const tables = [
             name: 'Exudado cantidad',
             options: [
               { label: 'Ausente', score: 1, definition: 'El apósito primario está seco al retirarlo' },
-              { label: 'Escaso', score: 2, definition: 'El opósito primario está moderadamente humedecido' },
-              { label: 'Moderado', score: 3, definition: 'El opósito primario está 100% humedecido y el secundario manchado' },
+              { label: 'Escaso', score: 2, definition: 'El apósito primario está moderadamente humedecido' },
+              { label: 'Moderado', score: 3, definition: 'El apósito primario está 100% humedecido y el secundario manchado' },
               { label: 'Abundante', score: 4, definition: 'El apósito primario y el secundario están totalmente mojados' },
             ],
           },
@@ -256,8 +256,8 @@ const tables = [
             options: [
               { label: 'Sin exudado', score: 1, definition: 'No existe presencia de líquido. Formación de la dermis' },
               { label: 'Seroso', score: 2, definition: 'Líquido claro, transparente o de color amarillo claro. Presente con 100% de tejido de granulación' },
-              { label: 'Hematócito o Turbio', score: 3, definition: ': Liquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
-              { label: 'Purulento', score: 4, definition: 'Liquido espeso cremoso de color amarillo-verdoso. Habitualmente cuando hay infección' },
+              { label: 'Hematócito o Turbio', score: 3, definition: ' Líquido más espeso que el anterior (seroso), de color blanco o rojo. Presente cuando no hay infección, pero hay esfacelo y/o placa necrótica' },
+              { label: 'Purulento', score: 4, definition: 'Líquido espeso cremoso de color amarillo-verdoso. Habitualmente cuando hay infección' },
             ],
           },
           {
@@ -281,7 +281,7 @@ const tables = [
           {
             name: 'Edema',
             options: [
-              { label: 'Ausente', score: 1, definition: 'No hay liquido subyacente alrededor de la úlcera' },
+              { label: 'Ausente', score: 1, definition: 'No hay líquido subyacente alrededor de la úlcera' },
               { label: '+', score: 2, definition: 'Edema de hasta 3 cm alrededor de la úlcera' },
               { label: '++', score: 3, definition: 'Abarca el 50% de la zona afectada' },
               { label: '+++', score: 4, definition: 'Se presenta en toda la zona afectada' },

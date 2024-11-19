@@ -21,8 +21,10 @@ const questions = [
             'Con colonización crítica',
             'Con colonización baja',
         ],
-        answers: ['Con colonización baja'],
-        feedback: 'La úlcera presenta una colonización baja, ya que no muestra signos de infección activa.'
+        answers: ['Con colonización baja',
+                'Con colonización crítica',
+                'Infectada',],
+        feedback: 'Las especies microbianas transitorias logran crecer y multiplicarse, pero en cantidades más bajas que en la colonización crítica. Clínicamente la lesión presentará 100% de tejido de granulación y el exudado es seroso. El exudado frecuentemente es bajo, pero también se puede encontrar exudado moderado a abundante, en especial en pacientes con edema de la extremidad. Puede presentar piel macerada, pigmentada, descamada o sana, no presenta calor local y la piel eritematosa. Corresponde a la fase proliferativa de la cicatrización. '
     },
     {
         id: 3,
@@ -32,17 +34,20 @@ const questions = [
             'Inhib. de la metaloproteasa',
             'Colágeno',
             'Espuma hidrofílica',
-            'Tul silicona',
+            'Tull silicona',
             'Transparentes no adhesivos (poliéster, nylon)',
+            'DACC',
+            'PHMB',
+            'RINGER+PHMB'
         ],
-        answers: ['Espuma hidrofílica'],
-        feedback: 'La espuma hidrofílica es adecuada para manejar el exudado moderado presente en la úlcera venosa.'
+        answers: ['Espuma hidrofílica', 'RINGER+PHMB', 'PHMB', 'DACC'],
+        feedback: 'La espuma hidrofílica es adecuada para manejar el exudado moderado presente en la úlcera venosa, pero al haber una colonización crítica se sugiere utilizar cualquier apósito  bacteriostático'
     },
     {
         id: 4,
         question: '¿Qué apósito secundario utilizará en este caso?',
         options: ['Tradicional', 'Tradicional especial', 'Ambos'],
-        answers: ['Tradicional especial'],
+        answers: ['Ambos'], 
         feedback: 'En este caso, un apósito tradicional  especial es válida como secundario.'
     },
     {
@@ -134,11 +139,11 @@ const questions = [
         question: 'Según la valoración realizada en el caso presentado, seleccione el tipo de lesión por presión al que corresponde',
         options: [
             'Tipo 2',
-            'Tipos 3 y 4 sin infección',
-            'Tipos 3 y 4 infectada',
+            'Tipo 3 y 4 sin infección',
+            'Tipo 3 y 4 infectada',
         ],
-        answers: ['Tipos 3 y 4 infectada'],
-        feedback: 'La infección y el exudado turbio sugieren una lesión por presión avanzada, clasificada en tipos 3 y 4.'
+        answers: ['Tipo 3 y 4 infectada'],
+        feedback: 'La infección y el exudado turbio sugieren una lesión por presión avanzada, clasificada en tipo 3 y 4.'
     },
     {
         id: 13,
