@@ -9,6 +9,7 @@ import { useScreen } from './contexts/ScreenContext';
 import cases from './data/cases';
 import { Howl } from 'howler';
 import backgroundMusic from './assets/background.mp3';
+import Cookies from 'js-cookie'; // Importamos la librería de cookies
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -16,21 +17,28 @@ function App() {
   const [selectedCases, setSelectedCases] = useState([]);
 
   useEffect(() => {
-    const authenticated = localStorage.getItem('isAuthenticated');
-    setIsAuthenticated(Boolean(authenticated));
+    // Verificamos si el token existe y si no ha expirado
+    const token = Cookies.get('token');
+    const tokenExpiration = Cookies.get('tokenExpiration');
+    const currentTime = new Date().getTime();
+
+    if (token && tokenExpiration && currentTime < tokenExpiration) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+      Cookies.remove('token');
+      Cookies.remove('tokenExpiration');
+    }
 
     const shuffledCases = cases.sort(() => Math.random() - 0.5).slice(0, 3);
     setSelectedCases(shuffledCases);
 
-    if (authenticated){
+    if (isAuthenticated) {
       const music = new Howl({ src: [backgroundMusic], loop: true, volume: 0.03 });
       music.play();
       return () => music.stop();
     }
-    
-    
-    
-  }, [setIsAuthenticated]);
+  }, [setIsAuthenticated, isAuthenticated]);
 
   if (!isAuthenticated) return <LoginScreen />;
 
@@ -44,4 +52,3 @@ function App() {
 }
 
 export default App;
-

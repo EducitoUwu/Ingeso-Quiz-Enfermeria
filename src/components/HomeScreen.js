@@ -3,16 +3,20 @@ import '../styles/HomeScreen.css';
 import { useAuth } from '../contexts/AuthContext';
 import { useScreen } from '../contexts/ScreenContext';
 import logo from '../assets/escudo-ucn-white.png';
+import Cookies from 'js-cookie'; // Importamos la librería de cookies
 
 const HomeScreen = () => {
   const { setIsAuthenticated } = useAuth();
   const { setScreen } = useScreen();
 
   const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    setIsAuthenticated(false);
-    setScreen('login');
-    window.location.reload();
+    // Eliminar las cookies del token y la expiración
+    Cookies.remove('token');
+    Cookies.remove('tokenExpiration');
+    
+    setIsAuthenticated(false); // Actualizamos el estado de autenticación
+    setScreen('login'); // Cambiamos la pantalla a login
+    window.location.reload(); // Recargamos la página para asegurar que el estado se actualiza
   };
 
   return (
