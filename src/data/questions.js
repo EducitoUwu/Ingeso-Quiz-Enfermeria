@@ -132,7 +132,7 @@ const questions = [
             'Dermatitis asociada a incontinencia',
         ],
         answers: ['Lesión por presión'],
-        feedback: 'La lesión en la zona sacra debido a estasis prolongada es un claro indicativo de una lesión por presión.'
+        feedback: 'Esta lesión corresponde a una lesión por presión, ya que confluyen los tres factores de riesgo para su desarrollo: estasis prolongada, presión y cizallamiento.'
     },
     {
         id: 12,

@@ -12,6 +12,9 @@ const descriptions = {
       arterial periférica. Sensibilidad disminuida.
       Al examen físico destaca edema + en EII, dolor eva 1, el apósito primario tiene 100% de exudado, 
       turbio, con mal olor. Al valorar profundidad, se percibe que en la zona plantar se toca el hueso.
+
+      Todo hueso expuesto se considera infectado por lo que se debe proteger adicionalmente con tull o hidrogel amorfo con plata, aunque exista exudado moderado a abundante. 
+      Esta aplicación con plata se realiza solo mientras esté expuesto.
     `,
     case3: `
       Usuario de 78 años con antecedente de hospitalización por ACV isquémico secuelado, cursa con lesión 
