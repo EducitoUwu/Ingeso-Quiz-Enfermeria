@@ -1,15 +1,47 @@
-.study-material {
+.study-material-container {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
     text-align: center;
-    margin: 20px 0;
+    margin: 0 auto;
 }
 
-.study-material img {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px auto;
+.study-material-container h1 {
+    color: black;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
-.study-material p {
+.study-material-container p {
+    text-align: justify;
+    font-size: 1rem;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.study-material-container a {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ed9441;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
-    margin-bottom: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.study-material-container a:hover {
+    background-color: #e67e22;
+}
+
+.study-material-container a:disabled {
+    background-color: #bdc3c7;
+    pointer-events: none;
 }
